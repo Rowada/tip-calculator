@@ -12,6 +12,10 @@ export default {
         inputBackground: "hsl(189, 41%, 97%)",
         containerBackground: "hsl(0, 0%, 100%)",
       },
+
+      fontFamily: {
+        body: ["Space Mono", "monospace"],
+      },
     },
   },
   plugins: [],
