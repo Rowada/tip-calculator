@@ -12,7 +12,7 @@ export const NumberOfPeopleInput = () => {
           <img className="w-2 h-auto" src={personIcon} alt="person-icon" />
         </div>
         <input
-          className="bg-inputBackground rounded-md text-right py-2 px-3 ps-10 block w-full"
+          className="bg-inputBackground rounded-md text-right py-2 px-3 ps-10 block w-full focus:outline-none focus:outline-1 focus:outline-primary"
           type="text"
           id="numberOfPeople"
           placeholder="0"

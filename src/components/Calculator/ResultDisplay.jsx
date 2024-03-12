@@ -22,7 +22,7 @@ export const ResultDisplay = () => {
           <h3 className="text-primary text-2xl">$0.00</h3>
         </div>
       </div>
-      <button className="w-full block bg-primary text-accent uppercase rounded py-2">
+      <button className="w-full block bg-primary text-accent uppercase rounded py-2 hover:bg-hover">
         reset
       </button>
     </div>

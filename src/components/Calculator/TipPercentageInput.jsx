@@ -7,19 +7,19 @@ export const TipPercentageInput = () => {
         Select Tip %
       </label>
 
-      <div className="flex flex-wrap mb-6 gap-3">
+      <div className="grid grid-cols-2 gap-3 mb-6 md:grid-cols-3">
         {[5, 10, 15, 25, 50].map((percentage) => (
           <button
             key={percentage}
-            className="block bg-accent text-white py-1 px-6 w-36 md:w-20 rounded active:bg-primary active:text-accent"
+            className="block bg-accent text-white py-2 px-6 rounded active:bg-primary active:text-accent focus:outline-none focus:outline-1 focus:outline-primary hover:bg-hover hover:text-accent"
           >
             {percentage}%
           </button>
         ))}
 
-        <div className="w-36 md:w-20">
+        <div>
           <input
-            className=" text-right text-md py-1 px-6 w-full rounded bg-inputBackground block placeholder-text"
+            className=" text-right text-lg py-2 px-6 w-full rounded bg-inputBackground block placeholder-text focus:outline-none focus:outline-1 focus:outline-primary"
             type="text"
             placeholder="Custom"
           />

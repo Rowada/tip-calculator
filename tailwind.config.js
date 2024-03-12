@@ -11,6 +11,7 @@ export default {
         background: "hsl(185, 41%, 84%)",
         inputBackground: "hsl(189, 41%, 97%)",
         containerBackground: "hsl(0, 0%, 100%)",
+        hover: "hsl(172,61%,73%)",
       },
 
       fontFamily: {
