@@ -6,14 +6,14 @@ import { ResultDisplay } from "./ResultDisplay";
 
 export const CalculatorContainer = () => {
   return (
-    <div className="bg-containerBackground rounded-xl flex items-center justify-center md:justify-evenly flex-wrap py-2 px-2">
-      <div className="w-full md:w-auto">
+    <div className="bg-containerBackground rounded-xl flex items-center justify-center md:justify-evenly flex-wrap py-6 px-6 md:h-96">
+      <div className="w-full md:w-1/2 md:pr-5">
         <BillInput />
         <TipPercentageInput />
         <NumberOfPeopleInput />
       </div>
 
-      <div className="w-full md:w-auto">
+      <div className="w-full md:w-1/2 h-full">
         <ResultDisplay />
       </div>
     </div>
