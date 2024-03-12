@@ -3,7 +3,7 @@ import personIcon from "../../assets/images/icon-person.svg";
 
 export const NumberOfPeopleInput = () => {
   return (
-    <div className="flex flex-col items-start justify-center">
+    <div>
       <label className="block mb-1 text-text text-sm" htmlFor="numberOfPeople">
         Number Of People
       </label>

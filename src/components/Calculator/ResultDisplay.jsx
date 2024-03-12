@@ -2,7 +2,7 @@ import React from "react";
 
 export const ResultDisplay = () => {
   return (
-    <div className="bg-accent rounded-xl py-5 px-5 w-96">
+    <div className="bg-accent rounded-xl py-5 px-5 sm:w-full">
       <div className="flex items-center justify-between mb-8">
         <div>
           <p className="text-white">Tip Amount</p>

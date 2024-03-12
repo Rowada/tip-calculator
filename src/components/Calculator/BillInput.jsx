@@ -3,7 +3,7 @@ import dollarIcon from "../../assets/images/icon-dollar.svg";
 
 export const BillInput = () => {
   return (
-    <div className="flex flex-col items-start justify-center">
+    <div>
       <label className="block mb-1 text-text text-sm" htmlFor="billAmount">
         Bill
       </label>
