@@ -4,19 +4,22 @@ import { useState } from "react";
 export const TipPercentageInput = ({ onTipPercentageChange }) => {
   const [customPercentage, setCustomPercentage] = useState("");
 
-  const handleTipPercentageClick = (percentage) => {
-    onTipPercentageChange(percentage);
-    setCustomPercentage("");
-  };
+  // const handlePercentageChange = (percentage) => {
+  //   setCustomPercentage("");
+  //   onTipPercentageChange(percentage, "predefined");
+  // };
 
   const handleCustomPercentageChange = (e) => {
     const value = e.target.value;
     setCustomPercentage(value);
-
-    if (!isNaN(value)) {
-      onTipPercentageChange(parseFloat(value));
+    const parsedPercentage = parseFloat(value);
+    if (!isNaN(parsedPercentage)) {
+      onTipPercentageChange(parsedPercentage, "custom");
+    } else {
+      onTipPercentageChange(0, "custom");
     }
   };
+
   return (
     <div>
       <label className="text-text mb-1 text-sm block" htmlFor="tipPercentage">
@@ -28,7 +31,7 @@ export const TipPercentageInput = ({ onTipPercentageChange }) => {
           <button
             key={percentage}
             className="block bg-accent text-white py-2 px-6 rounded active:bg-primary active:text-accent focus:outline-none focus:outline-1 focus:outline-primary hover:bg-hover hover:text-accent"
-            onClick={() => handleTipPercentageClick(percentage)}
+            // onClick={() => handlePercentageChange(percentage)}
           >
             {percentage}%
           </button>

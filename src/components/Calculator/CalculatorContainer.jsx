@@ -22,8 +22,12 @@ export const CalculatorContainer = () => {
     setNumberOfPeople(number);
   };
 
-  const handleTipPercentageChange = (percentage) => {
-    setTipPerrcentage(percentage);
+  const handleTipPercentageChange = (percentage, type) => {
+    if (type === "predefined") {
+      setTipPerrcentage(percentage);
+    } else {
+      setTipPerrcentage(percentage);
+    }
   };
 
   const calculateTip = () => {
