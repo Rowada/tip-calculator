@@ -13,13 +13,17 @@ export const CalculatorContainer = () => {
   const [tipPercentage, setTipPercentage] = useState(0);
   const [tipAmount, setTipAmount] = useState(0);
   const [totalPerPerson, setTotalPerPerson] = useState(0);
+  const [billError, setBillError] = useState("");
+  const [numberPeopleError, setNumberPeopleError] = useState("");
 
   const handleBillAmountChange = (amount) => {
     setBillAmount(amount);
+    setBillError("");
   };
 
   const handleNumberOfPeopleChange = (number) => {
     setNumberOfPeople(number);
+    setNumberPeopleError("");
   };
 
   const handleTipPercentageChange = (percentage) => {
@@ -27,6 +31,21 @@ export const CalculatorContainer = () => {
   };
 
   const calculateTip = () => {
+    if (billAmount === "") {
+      setBillError("Can't be zero");
+    }
+
+    if (isNaN(billAmount)) {
+      setBillError("Can't be letters");
+    }
+    if (isNaN(numberOfPeople)) {
+      setNumberPeopleError("Can't be letters");
+    }
+
+    if (numberOfPeople === "") {
+      setNumberPeopleError("Can't be zero");
+    }
+
     if (billAmount && numberOfPeople && tipPercentage) {
       const bill = parseFloat(billAmount);
       console.log(tipPercentage);
@@ -59,6 +78,7 @@ export const CalculatorContainer = () => {
             icon={dollarIcon}
             value={billAmount}
             onChange={handleBillAmountChange}
+            error={billError}
           />
           <TipPercentageInput
             onTipPercentageChange={handleTipPercentageChange}
@@ -70,6 +90,7 @@ export const CalculatorContainer = () => {
             icon={personIcon}
             value={numberOfPeople}
             onChange={handleNumberOfPeopleChange}
+            error={numberPeopleError}
           />
 
           <button type="submit" className="hidden">

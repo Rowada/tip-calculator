@@ -35,7 +35,7 @@ export const TipPercentageInput = ({ onTipPercentageChange }) => {
             type="button"
             key={percentage}
             className={`block bg-accent text-white py-2 px-6 rounded focus:outline-none focus:outline-1 focus:outline-primary hover:bg-hover hover:text-accent ${
-              selectedPercentage === percentage ? "text-black bg-primary" : ""
+              selectedPercentage === percentage ? "text-accent bg-primary" : ""
             }`}
             onClick={() => handlePercentageChange(percentage)}
           >
