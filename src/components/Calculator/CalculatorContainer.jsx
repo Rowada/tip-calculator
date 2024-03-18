@@ -10,7 +10,7 @@ import { useState } from "react";
 export const CalculatorContainer = () => {
   const [billAmount, setBillAmount] = useState("");
   const [numberOfPeople, setNumberOfPeople] = useState("");
-  const [tipPercentage, setTipPerrcentage] = useState(0);
+  const [tipPercentage, setTipPercentage] = useState(0);
   const [tipAmount, setTipAmount] = useState(0);
   const [totalPerPerson, setTotalPerPerson] = useState(0);
 
@@ -22,12 +22,8 @@ export const CalculatorContainer = () => {
     setNumberOfPeople(number);
   };
 
-  const handleTipPercentageChange = (percentage, type) => {
-    if (type === "predefined") {
-      setTipPerrcentage(percentage);
-    } else {
-      setTipPerrcentage(percentage);
-    }
+  const handleTipPercentageChange = (percentage) => {
+    setTipPercentage(percentage);
   };
 
   const calculateTip = () => {
@@ -75,6 +71,10 @@ export const CalculatorContainer = () => {
             value={numberOfPeople}
             onChange={handleNumberOfPeopleChange}
           />
+
+          <button type="submit" className="hidden">
+            Submit
+          </button>
         </form>
       </div>
 
