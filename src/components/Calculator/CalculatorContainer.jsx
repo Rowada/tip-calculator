@@ -46,7 +46,7 @@ export const CalculatorContainer = () => {
       setNumberPeopleError("Can't be zero");
     }
 
-    if (billAmount && numberOfPeople && tipPercentage) {
+    if (!isNaN(billAmount) && !isNaN(numberOfPeople) && tipPercentage) {
       const bill = parseFloat(billAmount);
       console.log(tipPercentage);
       const tipPercentageDecimal = tipPercentage / 100;
