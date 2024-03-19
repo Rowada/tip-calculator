@@ -1,4 +1,5 @@
 // @ts-nocheck
+import { useRef } from "react";
 import dollarIcon from "../../assets/images/icon-dollar.svg";
 import personIcon from "../../assets/images/icon-person.svg";
 import { Inputs } from "./Inputs";
@@ -14,6 +15,20 @@ export const CalculatorContainer = () => {
   const [totalPerPerson, setTotalPerPerson] = useState(0);
   const [billError, setBillError] = useState("");
   const [numberPeopleError, setNumberPeopleError] = useState("");
+
+  const tipPercentageRef = useRef(null);
+
+  const handleReset = () => {
+    setBillAmount("");
+    setNumberOfPeople("");
+    setTipPercentage(0);
+    setTipAmount(0);
+    setTotalPerPerson(0);
+    setBillError("");
+    setNumberPeopleError("");
+
+    if (tipPercentageRef.current) tipPercentageRef.current.handleReset();
+  };
 
   const handleBillAmountChange = (amount) => {
     setBillAmount(amount);
@@ -80,6 +95,7 @@ export const CalculatorContainer = () => {
           />
           <TipPercentageInput
             onTipPercentageChange={handleTipPercentageChange}
+            ref={tipPercentageRef}
           />
 
           <Inputs
@@ -98,7 +114,11 @@ export const CalculatorContainer = () => {
       </div>
 
       <div className="w-full md:w-1/2 h-full">
-        <ResultDisplay tipAmount={tipAmount} totalPerPerson={totalPerPerson} />
+        <ResultDisplay
+          tipAmount={tipAmount}
+          totalPerPerson={totalPerPerson}
+          handleReset={handleReset}
+        />
       </div>
     </div>
   );
