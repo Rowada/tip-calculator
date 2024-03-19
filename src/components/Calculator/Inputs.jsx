@@ -1,6 +1,4 @@
 // @ts-nocheck
-import React from "react";
-import { useState } from "react";
 
 export const Inputs = ({ id, label, value, onChange, icon, error }) => {
   const handleInputChange = (e) => {

@@ -1,5 +1,4 @@
 // @ts-nocheck
-import React from "react";
 import dollarIcon from "../../assets/images/icon-dollar.svg";
 import personIcon from "../../assets/images/icon-person.svg";
 import { Inputs } from "./Inputs";
@@ -48,7 +47,6 @@ export const CalculatorContainer = () => {
 
     if (!isNaN(billAmount) && !isNaN(numberOfPeople) && tipPercentage) {
       const bill = parseFloat(billAmount);
-      console.log(tipPercentage);
       const tipPercentageDecimal = tipPercentage / 100;
       const tip = bill * tipPercentageDecimal;
       const total = bill + tip;

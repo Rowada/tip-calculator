@@ -1,4 +1,4 @@
-import React from "react";
+// @ts-nocheck
 
 export const ResultDisplay = ({ tipAmount = 0, totalPerPerson = 0 }) => {
   return (
