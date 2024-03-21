@@ -45,35 +45,45 @@ export const CalculatorContainer = () => {
   };
 
   const calculateTip = () => {
-    if (billAmount === "") {
-      setBillError("Can't be zero");
+    if (
+      billAmount === "" ||
+      isNaN(billAmount) ||
+      parseFloat(billAmount) === 0
+    ) {
+      setBillError(
+        billAmount === ""
+          ? "Can't be empty"
+          : isNaN(billAmount)
+          ? "Can't be letters"
+          : "Can't be zero"
+      );
+      return;
     }
 
-    if (isNaN(billAmount)) {
-      setBillError("Can't be letters");
-    }
-    if (isNaN(numberOfPeople)) {
-      setNumberPeopleError("Can't be letters");
+    if (
+      numberOfPeople === "" ||
+      isNaN(numberOfPeople) ||
+      parseFloat(numberOfPeople) === 0
+    ) {
+      setNumberPeopleError(
+        numberOfPeople === ""
+          ? "Can't be empty"
+          : isNaN(numberOfPeople)
+          ? "Can't be letters"
+          : "Can't be zero"
+      );
+      return;
     }
 
-    if (numberOfPeople === "") {
-      setNumberPeopleError("Can't be zero");
-    }
+    const bill = parseFloat(billAmount);
+    const tipPercentageDecimal = tipPercentage / 100;
+    const tip = bill * tipPercentageDecimal;
+    const total = bill + tip;
+    const tipTotalPerPerson = tip / numberOfPeople;
+    const totalPerPersonValue = total / numberOfPeople;
 
-    if (!isNaN(billAmount) && !isNaN(numberOfPeople) && tipPercentage) {
-      const bill = parseFloat(billAmount);
-      const tipPercentageDecimal = tipPercentage / 100;
-      const tip = bill * tipPercentageDecimal;
-      const total = bill + tip;
-      const tipTotalPerPerson = tip / numberOfPeople;
-      const totalPerPersonValue = total / numberOfPeople;
-
-      setTipAmount(tipTotalPerPerson);
-      setTotalPerPerson(totalPerPersonValue);
-    } else {
-      setTipAmount(0);
-      setTotalPerPerson(0);
-    }
+    setTipAmount(tipTotalPerPerson);
+    setTotalPerPerson(totalPerPersonValue);
   };
 
   const handleSubmit = (e) => {
@@ -82,7 +92,7 @@ export const CalculatorContainer = () => {
   };
 
   return (
-    <div className="bg-containerBackground rounded-xl flex items-center justify-center md:justify-evenly flex-wrap py-6 px-6 md:h-96">
+    <div className="bg-containerBackground rounded-3xl flex items-center justify-center md:justify-evenly flex-wrap py-6 px-6 md:w-156 md:h-96">
       <div className="w-full md:w-1/2 md:pr-5">
         <form onSubmit={handleSubmit}>
           <Inputs
