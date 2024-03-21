@@ -17,6 +17,10 @@ export default {
       fontFamily: {
         body: ["Space Mono", "monospace"],
       },
+
+      spacing: {
+        156: "56.25rem",
+      },
     },
   },
   plugins: [],

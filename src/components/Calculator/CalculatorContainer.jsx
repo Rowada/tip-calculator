@@ -92,7 +92,7 @@ export const CalculatorContainer = () => {
   };
 
   return (
-    <div className="bg-containerBackground rounded-xl flex items-center justify-center md:justify-evenly flex-wrap py-6 px-6 md:h-96">
+    <div className="bg-containerBackground rounded-3xl flex items-center justify-center md:justify-evenly flex-wrap py-6 px-6 md:w-156 md:h-96">
       <div className="w-full md:w-1/2 md:pr-5">
         <form onSubmit={handleSubmit}>
           <Inputs
